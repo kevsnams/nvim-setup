@@ -1,7 +1,7 @@
 local setup, nvimtree = pcall(require, "nvim-tree")
 
 if not setup then
-    return
+	return
 end
 
 -- recommended settings from nvim-tree documentation
@@ -11,11 +11,20 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 nvimtree.setup({
-    actions = {
-        open_file = {
-            window_picker = {
-                enable = false,
-            },
-        },
-    },
+	actions = {
+		open_file = {
+			window_picker = {
+				enable = false,
+			},
+		},
+	},
+
+	filters = {
+		custom = {
+			"^.git$",
+			"node_modules",
+			".cache",
+			"vendors",
+		},
+	},
 })
