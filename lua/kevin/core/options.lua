@@ -39,3 +39,5 @@ opt.iskeyword:append("-")
 
 -- this makes it live, in-place substitution
 opt.inccommand = "nosplit"
+
+-- opt.numberwidth = 5

@@ -123,6 +123,9 @@ return packer.startup(function(use)
 	-- for laravel blade highliting
 	use("jwalton512/vim-blade")
 
+	-- for cold folding
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
