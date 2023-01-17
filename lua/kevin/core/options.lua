@@ -35,9 +35,7 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-
 opt.iskeyword:append("-")
 
-
-
-
+-- this makes it live, in-place substitution
+opt.inccommand = "nosplit"

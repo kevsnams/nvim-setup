@@ -3,6 +3,9 @@ if not status then
 	return
 end
 
+-- set vim to have code folding feature
+vim.wo.foldmethod = "syntax"
+
 treesitter.setup({
 	highlight = {
 		enable = true,

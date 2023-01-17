@@ -13,10 +13,14 @@ local packer_bootstrap = ensure_packer()
 
 -- Autocommand that reloads neovim whenever you save file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-  augroup end
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+    augroup end
+
+    augroup highlight_yank
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}
+    augroup end
 ]])
 
 local status, packer = pcall(require, "packer")
@@ -30,7 +34,8 @@ return packer.startup(function(use)
 	-- lua function that many plugins use
 	use("nvim-lua/plenary.nvim")
 
-	use("rose-pine/neovim") -- preferred colorscheme
+	-- preferred color scheme (theme)
+	use({ "nyoom-engineering/oxocarbon.nvim" })
 
 	-- tmux & splut window navigator
 	use("christoomey/vim-tmux-navigator")
@@ -105,7 +110,12 @@ return packer.startup(function(use)
 	-- git lense
 	use("APZelos/blamer.nvim")
 
+	-- github copilot
 	use("github/copilot.vim")
+
+	use("lukas-reineke/indent-blankline.nvim")
+
+	use("kshenoy/vim-signature")
 
 	if packer_bootstrap then
 		require("packer").sync()
