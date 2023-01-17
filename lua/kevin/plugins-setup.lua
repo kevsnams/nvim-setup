@@ -35,7 +35,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	-- preferred color scheme (theme)
-	use({ "nyoom-engineering/oxocarbon.nvim" })
+	use({ "cooper-anderson/glowbeam.nvim" })
 
 	-- tmux & splut window navigator
 	use("christoomey/vim-tmux-navigator")
@@ -116,6 +116,12 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
 	use("kshenoy/vim-signature")
+
+	-- used to color hex values
+	use("brenoprata10/nvim-highlight-colors")
+
+	-- for laravel blade highliting
+	use("jwalton512/vim-blade")
 
 	if packer_bootstrap then
 		require("packer").sync()
