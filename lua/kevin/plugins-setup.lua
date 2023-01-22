@@ -126,6 +126,12 @@ return packer.startup(function(use)
 	-- for cold folding
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
+	-- scrollbars
+	use("Xuyuanp/scrollbar.nvim")
+
+	-- barbar
+	use("romgrk/barbar.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

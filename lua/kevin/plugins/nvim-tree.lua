@@ -13,10 +13,18 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 nvimtree.setup({
 	actions = {
 		open_file = {
+			quit_on_open = true,
 			window_picker = {
 				enable = false,
 			},
 		},
+	},
+
+	view = {
+		number = true,
+		relativenumber = true,
+		side = "right",
+		width = 40,
 	},
 
 	filters = {

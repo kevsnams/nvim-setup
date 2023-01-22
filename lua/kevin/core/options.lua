@@ -1,5 +1,7 @@
 local opt = vim.opt -- for conciseness
 
+opt.mouse = "a" -- enable mouse support
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
